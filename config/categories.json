@@ -1,0 +1,5 @@
+{
+  "supermercado": ["mercadona", "cash fresh", "carrefour"],
+  "transporte": ["metro", "empresa malague", "renfe"],
+  "diversion": ["cafe", "pizzeria"]
+}
