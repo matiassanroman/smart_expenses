@@ -54,7 +54,7 @@ smart_expenses/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/smart_expenses.git
+git clone https://github.com/matiassanroman/smart_expenses.git
 cd smart_expenses
 ```
 
@@ -88,11 +88,11 @@ SPREADSHEET_ID=your_google_sheet_id
 SERVICE_ACCOUNT_KEY_PATH=secrets/key.json
 ```
 
-💡 *For Gmail, you must enable App Passwords to connect via IMAP securely.*
+💡 *For Gmail, you must enable [App Passwords](https://myaccount.google.com/apppasswords) to connect via IMAP securely.*
 
 ### 5️⃣ Add your Google service account key
 
-1. Create a service account in your **Google Cloud Console**.  
+1. Create a service account in your [Google Cloud Console](https://console.cloud.google.com/).  
 2. Enable the **Google Sheets API**.  
 3. Download the JSON key file and save it as `secrets/key.json`.  
 4. Share your Google Sheet with the service account email (`xxxx@xxxx.iam.gserviceaccount.com`).
