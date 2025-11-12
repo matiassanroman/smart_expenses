@@ -44,7 +44,7 @@ def classify_expenses(expenses: Iterable[Expense]) -> List[ClassifiedExpense]:
 
     for exp in expenses:
         detail = str(exp.get("detalle", "")).lower()
-        matched_category = "Others"
+        matched_category = "otros"
 
         for category, keywords in categories.items():
             if any(keyword in detail for keyword in keywords):
