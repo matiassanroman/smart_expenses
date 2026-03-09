@@ -18,7 +18,8 @@ def parse_body(date: str, body: str) -> dict:
         logger.debug("No body.")
         return None
 
-    pattern = r"(Te escribimos para comunicarte el pago .*?)(?:\n|$)"
+    #pattern = r"(Te escribimos para comunicarte el pago .*?)(?:\n|$)"
+    pattern = r"(Te escribimos para comunicarte .*?)(?:\n|$)"
     match = re.search(pattern, body, re.IGNORECASE)
 
     if not match:
@@ -29,6 +30,9 @@ def parse_body(date: str, body: str) -> dict:
 
     match_amount = re.search(r"(\d+[.,]\d{2})\s*EUR", text)
     match_detail = re.search(r"en\s+[^.]*en\s+([^.]*)\.", text)
+    
+    if not match_detail:
+        match_detail = re.search(r"por parte de\s+(.+?)\s+con la tarjeta", text, re.IGNORECASE)
 
     result_body = {
         "fecha": date,
@@ -58,6 +62,7 @@ def parse_date(date: str):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     date = "Thu, 23 Oct 2025 11:32:24 -0600"
-    body = "Te escribimos para comunicarte el pago de 1.20 EUR con tu tarjeta acabada en 3096 en CAFETERIA NAVAR."
+    body = "Te escribimos para comunicarte el pago de 1.20 EUR con tu tarjeta acabada en XXXX en CAFETERIA NAVAR."
+    #body= "Te escribimos para comunicarte que se ha efectuado una retención de 17.40 EUR por parte de FREIDURIA PACO con la tarjeta acabada en XXXX."
     result_date = parse_date(date)
     parse_body(result_date, body)
