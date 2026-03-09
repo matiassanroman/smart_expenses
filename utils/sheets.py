@@ -48,7 +48,7 @@ def append_expenses(expenses: Iterable[Dict[str, object]]) -> dict:
             amount = 0.0
 
         row = [
-            f"'{e.get('fecha', '')}",
+            f"{e.get('fecha', '')}",
             e.get("categoria", ""),
             e.get("detalle", ""),
             amount,
