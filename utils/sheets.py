@@ -60,7 +60,7 @@ def append_expenses(expenses: Iterable[Dict[str, object]]) -> dict:
         sheet.values()
         .append(
             spreadsheetId=spreadsheet,
-            range="A1",
+            range="Carga!A1",
             valueInputOption="USER_ENTERED",
             insertDataOption="INSERT_ROWS",
             body=body,
