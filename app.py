@@ -27,12 +27,15 @@ def main():
     logger.info("Starting expense ingestion pipeline...")
     since_date = (date.today() - timedelta(days=1)).strftime("%d-%b-%Y")
     next_date = (date.today()).strftime("%d-%b-%Y")
-
+    
+    #since_date = "23-Apr-2026"
+    #next_date = "24-Apr-2026"
     expenses = retrieve_expenses(since_date, next_date)
+    
     if not expenses:
         logger.warning("No expenses retrieved. Exiting.")
         return
-
+    
     classified = classify_expenses(expenses)
     result = append_expenses(classified)
     logger.info("Append result: %s", result)

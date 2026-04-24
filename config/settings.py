@@ -10,6 +10,7 @@ EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.getenv("EMAIL_PASS")
 SEARCH_FROM = os.getenv("SEARCH_FROM")
 SEARCH_SUBJECT = os.getenv("SEARCH_SUBJECT")
+SEARCH_SUBJECT_2 = os.getenv("SEARCH_SUBJECT_2")
 
 # Google Sheets configuration
 SPREADSHEET_ID = os.getenv("SPREADSHEET_ID")
