@@ -2,7 +2,7 @@ name: Daily run (20:00 Madrid)
 
 on:
   schedule:
-    - cron: '0 19 * * *'  # 19:00 UTC = 20:00 Madrid
+    - cron: "0 18 * * *" # 19:00 UTC = 20:00 Madrid
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13.0'
+          python-version: "3.13.0"
 
       - name: Install dependencies
         run: |
@@ -38,6 +38,7 @@ jobs:
           EMAIL_PASS=${{ secrets.EMAIL_PASS }}
           SEARCH_FROM=${{ secrets.SEARCH_FROM }}
           SEARCH_SUBJECT=${{ secrets.SEARCH_SUBJECT }}
+          SEARCH_SUBJECT_2=${{ secrets.SEARCH_SUBJECT_2 }}
           SPREADSHEET_ID=${{ secrets.SPREADSHEET_ID }}
           SERVICE_ACCOUNT_KEY_PATH=secrets/key.json
           EOF
