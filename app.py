@@ -28,8 +28,10 @@ def main():
     since_date = (date.today() - timedelta(days=1)).strftime("%d-%b-%Y")
     next_date = (date.today()).strftime("%d-%b-%Y")
     
-    #since_date = "23-Apr-2026"
-    #next_date = "24-Apr-2026"
+    #since_date = "24-Apr-2026"
+    #next_date = "25-Apr-2026"
+    #print(since_date, next_date)
+    
     expenses = retrieve_expenses(since_date, next_date)
     
     if not expenses:

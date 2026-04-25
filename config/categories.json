@@ -1,10 +1,6 @@
 {
-  "transporte": [
-    "metro", 
-    "empresa malague", 
-    "renfe", 
-    "estanco suarez"
-  ],
+  "netflix": ["netflix"],
+  "transporte": ["metro", "empresa malague", "renfe", "estanco suarez"],
   "cuotas": ["cuota fraccionar compra de"],
   "peluqueria": ["barberia"],
   "comida afuera": [
@@ -22,8 +18,8 @@
     "standard coffee",
     "pez lola",
     "dominos",
-    "pizza", 
-    "pizzería", 
+    "pizza",
+    "pizzería",
     "carpanta",
     "felica deli caf",
     "la canasta",

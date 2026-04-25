@@ -55,9 +55,13 @@ def retrieve_expenses(
 
     try:
         imap.select("inbox")
-        criteria = f'FROM "{from_filter}" SINCE {since_date} BEFORE {next_date}'
-        print(criteria)
+        criteria = (
+            f'FROM "{from_filter}" '
+            f'OR (SUBJECT "{subject_filter}") (SUBJECT "{subject_filter_2}") '
+            f'SINCE {since_date} BEFORE {next_date}'
+        )
         status, data = imap.search(None, criteria)
+
         if status != "OK":
             logger.error("IMAP search failed: %s", status)
             return []
@@ -72,14 +76,7 @@ def retrieve_expenses(
             
             raw_email = fetch_data[0][1]
             msg = email.message_from_bytes(raw_email)
-
-            subject = msg.get("Subject", "")
-            if not any(s in subject for s in [
-                subject_filter,
-                subject_filter_2,
-            ]):
-                continue
-
+            
             body = _get_text_from_message(msg)
 
             parsed = parse_body(parse_date(msg.get("Date", "")), body)
