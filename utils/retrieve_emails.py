@@ -70,7 +70,7 @@ def retrieve_expenses(
 
         mail_ids = data[0].split()
         expenses = []
-    for mail_id in mail_ids:
+        for mail_id in mail_ids:
             status, fetch_data = imap.fetch(mail_id, "(RFC822)")
             if status != "OK" or not fetch_data:
                 logger.warning("Failed to fetch mail id %s", mail_id)
