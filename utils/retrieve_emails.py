@@ -37,7 +37,7 @@ def retrieve_expenses(
     next_date: str,
     from_filter: str = SEARCH_FROM,
     subject_filter: str = SEARCH_SUBJECT,
-    subject_filter_2: str = SEARCH_SUBJECT_2,
+    subject_filter_2: str = SEARCH_SUBJECT_2
 ) -> List[dict]:
     """
     Connects to IMAP, searches emails and returns a list of expense dicts.
@@ -54,6 +54,8 @@ def retrieve_expenses(
         return []
 
     try:
+        print(SEARCH_SUBJECT_2) 
+        print(SEARCH_SUBJECT)
         imap.select("inbox")
         criteria = (
             f'FROM "{from_filter}" '
@@ -68,7 +70,7 @@ def retrieve_expenses(
 
         mail_ids = data[0].split()
         expenses = []
-        for mail_id in mail_ids:
+    for mail_id in mail_ids:
             status, fetch_data = imap.fetch(mail_id, "(RFC822)")
             if status != "OK" or not fetch_data:
                 logger.warning("Failed to fetch mail id %s", mail_id)
