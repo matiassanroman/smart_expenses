@@ -55,13 +55,11 @@ def retrieve_expenses(
 
     try:
         imap.select("inbox")
-        logger.info(f'Subject: {subject_filter}, {subject_filter_2}')
         criteria = (
             f'FROM "{from_filter}" '
             f'OR (SUBJECT "{subject_filter}") (SUBJECT "{subject_filter_2}") '
             f'SINCE {since_date} BEFORE {next_date}'
         )
-        logger.info(f'Criteria: {criteria}')
         status, data = imap.search(None, criteria)
 
         if status != "OK":

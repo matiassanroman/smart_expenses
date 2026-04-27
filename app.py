@@ -30,14 +30,11 @@ def main():
     
     #since_date = "24-Apr-2026"
     #next_date = "25-Apr-2026"
-    #print(since_date, next_date)
-    
-    logger.info(f'run date: {since_date}, {next_date}')
 
     expenses = retrieve_expenses(since_date, next_date)
     
     if not expenses:
-        logger.warning("No expenses retrieved. Exiting.")
+        logger.warning("No expenses retrieved.")
         return
     
     classified = classify_expenses(expenses)
