@@ -32,6 +32,8 @@ def main():
     #next_date = "25-Apr-2026"
     #print(since_date, next_date)
     
+    logger.info(f'run date: {since_date}, {next_date}')
+
     expenses = retrieve_expenses(since_date, next_date)
     
     if not expenses:
