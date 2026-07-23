@@ -147,3 +147,8 @@ The included workflow `.github/workflows/daily.yml` runs automatically every day
 - `.env.local` and `secrets/key.json` are **dynamically generated** during the workflow and **never committed** to Git.  
 - All sensitive data is stored in **GitHub Secrets**.  
 - The workflow automatically **removes temporary credentials** after each run.
+
+---
+
+## **Update Version**
+- 1.0.0
