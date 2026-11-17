@@ -59,7 +59,7 @@ jobs:
           subject: "✅ Ejecución exitosa del script de gastos"
           to: ${{ secrets.EMAIL_USER }}
           from: "GitHub Actions <${{ secrets.EMAIL_USER }}>"
-          body: "El script app.py se ejecutó correctamente a las 20:00 hora de Madrid."
+          body: "El script app.py se ejecutó correctamente a las 18:11 hora de Madrid."
 
       - name: Send failure email
         if: failure()
