@@ -1,8 +1,9 @@
-name: Daily run (20:00 Madrid)
+name: Daily run (18:11 Madrid)
 
 on:
   schedule:
-    - cron: "0 18 * * *" # 19:00 UTC = 20:00 Madrid
+    - cron: "11 18 * * *" # 18:11
+      timezone: "Europe/Madrid"
   workflow_dispatch:
 
 jobs:
@@ -11,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -49,7 +50,7 @@ jobs:
 
       - name: Send success email
         if: success()
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v23
         with:
           server_address: smtp.gmail.com
           server_port: 587
@@ -62,7 +63,7 @@ jobs:
 
       - name: Send failure email
         if: failure()
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v23
         with:
           server_address: smtp.gmail.com
           server_port: 587
