@@ -2,7 +2,7 @@ name: Daily run (18:11 Madrid)
 
 on:
   schedule:
-    - cron: "11 18 * * *" # 18:11
+    - cron: "11 13 * * *" # 13:11
       timezone: "Europe/Madrid"
   workflow_dispatch:
 
